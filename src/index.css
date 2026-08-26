@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  overscroll-behavior-y: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #2A3542;
+  border-radius: 8px;
+}
+
+@media print {
+  body { background: #ffffff !important; }
+  body * { visibility: hidden; }
+  #print-report, #print-report * { visibility: visible; }
+  #print-report { position: absolute; top: 0; left: 0; width: 100%; background: #ffffff; color: #111; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-mecha text-white font-semibold px-4 py-2.5 shadow-glow hover:bg-mecha-light active:scale-[0.98] transition-all disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-base-700 text-base-100 font-medium px-4 py-2.5 hover:bg-base-600 active:scale-[0.98] transition-all;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl text-base-300 font-medium px-3 py-2 hover:bg-base-800 hover:text-base-100 transition-all;
+  }
+  .card {
+    @apply bg-base-900 border border-base-700/60 rounded-xl2 shadow-card;
+  }
+  .input {
+    @apply w-full rounded-lg bg-base-800 border border-base-600 px-3 py-2.5 text-base-100 placeholder:text-base-400 focus:outline-none focus:ring-2 focus:ring-tech/60 focus:border-tech transition-all;
+  }
+  .label {
+    @apply block text-sm font-medium text-base-300 mb-1.5;
+  }
+  .badge-auto {
+    @apply inline-flex items-center gap-1 rounded-full bg-tech/15 text-tech-light px-2.5 py-1 text-xs font-semibold;
+  }
+  .badge-moto {
+    @apply inline-flex items-center gap-1 rounded-full bg-mecha/15 text-mecha-light px-2.5 py-1 text-xs font-semibold;
+  }
+}
