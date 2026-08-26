@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { CheckCircle2, Loader2, Mail, AlertTriangle, Users, Bug, CreditCard, HelpCircle } from 'lucide-react'
+import { CheckCircle2, Loader2, Mail, AlertTriangle, Bug, CreditCard, HelpCircle } from 'lucide-react'
 import { useSupportRequests } from '../hooks/useFeedback'
 import { useLanguage } from '../context/LanguageContext'
 import Header from '../components/layout/Header'
 
 const SUBJECTS = [
-  { value: 'client', icon: Users, key: 'subjectClient' },
   { value: 'bug', icon: Bug, key: 'subjectBug' },
   { value: 'account', icon: CreditCard, key: 'subjectAccount' },
   { value: 'other', icon: HelpCircle, key: 'subjectOther' }
@@ -16,7 +15,7 @@ const SUPPORT_EMAIL = 'support@foliomeca.app'
 export default function ContactPage() {
   const { t } = useLanguage()
   const { addRequest } = useSupportRequests()
-  const [subject, setSubject] = useState('client')
+  const [subject, setSubject] = useState('bug')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
