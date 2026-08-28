@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
 import AppShell from './components/layout/AppShell'
 import LoginPage from './pages/LoginPage'
+import DemoGaragePage from './pages/DemoGaragePage'
 import DashboardPage from './pages/DashboardPage'
 import GaragePage from './pages/GaragePage'
 import VehicleDetailPage from './pages/VehicleDetailPage'
@@ -31,6 +32,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/connexion" element={<LoginPage />} />
+      <Route path="/demo" element={<DemoGaragePage />} />
       <Route
         element={
           <ProtectedRoute>
